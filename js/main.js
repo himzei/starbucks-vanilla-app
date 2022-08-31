@@ -28,15 +28,30 @@ window.addEventListener(
         opacity: 0,
         display: "none",
       });
+      // 버튼 보이기
+      gsap.to("#to-top", 0.2, {
+        x: 0,
+      });
     } else {
       // 배지 보이기
       gsap.to(badgeEl, 0.6, {
         opacity: 1,
         display: "block",
       });
+      // 버튼 숨기기 scroll to
+      gsap.to("#to-top", 0.2, {
+        x: 100,
+      });
     }
   }, 300)
 );
+
+const toTopEl = document.querySelector("#to-top");
+toTopEl.addEventListener("click", function () {
+  gsap.to(window, 0.7, {
+    scrollTo: 0,
+  });
+});
 
 // 메인 비쥬얼 순차적으로 나타내기
 const fadeEls = document.querySelectorAll(".visual .fade-in");
