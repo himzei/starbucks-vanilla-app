@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KPN - Community</title>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-auth.min.js" integrity="sha512-GAEvFso2oksY5JFkHlrfLhZgAV6aL48qxnbxPnbKnNLeG/XsU/c0lh/g9gocZ2RtbRx6VDTqspPEy9ixWvbfzw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.1/firebase-firestore.min.js" integrity="sha512-95HhZKEWw0vxywbO/5CJhf+KJqEDEmXGDeys3ylTMTuW50ccC26GcV7pPhTiYC8fH3jj0i4AwxRdIN5vfoLqmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    
+   <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAuhkCYwL8XL4d12RRT1BQNPhAl-evX6rI",
+      authDomain: "ken-s-programming-note.firebaseapp.com",
+      projectId: "ken-s-programming-note",
+      storageBucket: "ken-s-programming-note.appspot.com",
+      messagingSenderId: "123105724625",
+      appId: "1:123105724625:web:7c115e2fc1348a04eb5df0",
+      measurementId: "G-2YDRVHQFW6",
+    };
+    
+    
+    // Initialize Firebase
+    export const app = firebase.initializeApp(firebaseConfig);
+   //  const analytics = getAnalytics(app);
+   const db = app.firestore();
+   db.collection("notices")
+     .get()
+     .then((notices) => {
+       notices.forEach((doc) => {
+         console.log(doc.data());
+       });
+     });
+   </script>
+    
+  </head>
+  <body>
+    dsajf;sd
+  </body>
+</html>
